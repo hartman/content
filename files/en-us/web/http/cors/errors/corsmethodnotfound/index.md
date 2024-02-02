@@ -31,7 +31,9 @@ Trying to use a {{HTTPMethod("PUT")}} request will fail with this error.
 
 Make sure your code only uses the permitted HTTP methods when accessing the service.
 
-> **Note:** If the server includes any unrecognized or undefined method names in its `Access-Control-Allow-methods` header, a different error occurs: [`Reason: invalid token 'xyz' in CORS header 'Access-Control-Allow-Methods'`](/en-US/docs/Web/HTTP/CORS/Errors/CORSInvalidAllowMethod).
+> **Note:** You might encounter this error when making credentialed requests, where the server is answering the preflight with the wildcard value "`*`" for `Access-Control-Allow-Methods`. The wildcard value is only allowed for requests without credentials.
+
+> **Note:** If the server includes any unrecognized or undefined method names in its `Access-Control-Allow-Methods` header, a different error occurs: [`Reason: invalid token 'xyz' in CORS header 'Access-Control-Allow-Methods'`](/en-US/docs/Web/HTTP/CORS/Errors/CORSInvalidAllowMethod).
 
 ## See also
 
